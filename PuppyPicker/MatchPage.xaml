@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.MatchPage"  xmlns:local ="clr-namespace:PuppyPicker" Title = "Match">
+    <StackLayout Padding="10" >
+       <Label Text="Please enter title for the survey" 
+              x:Name="labelTitle"/> 
+       <Entry x:Name="entryTitle"/>
+       <ListView Margin="0,20,0,0" VerticalOptions="Start" HeightRequest="300">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:SurveyQuestion}">
+                    <local:SurveyQuestion question="question1" answer="answer1"/>
+                    <local:SurveyQuestion question="question2" answer="answer2"/>       
+                    <local:SurveyQuestion question="question3" answer="answer3"/>       
+                    <local:SurveyQuestion question="question4" answer="answer4"/>       
+                    <local:SurveyQuestion question="question5" answer="answer5"/>       
+                    <local:SurveyQuestion question="question6" answer="answer6"/>       
+                    <local:SurveyQuestion question="question7" answer="answer7"/>       
+                    <local:SurveyQuestion question="question8" answer="answer8"/>       
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                            <Label Text="{Binding question}" FontAttributes="Bold" />
+                            <Label Grid.Column="1" Text="{Binding answer}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="FINISH" Clicked="Handle_Clicked"/>
+    </StackLayout>
+</ContentPage>

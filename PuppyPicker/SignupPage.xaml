@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.SignupPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
+            <Label Text="Enter your Details for account creation"/>
+            <Label Text="User Name"/>
+            <Entry Placeholder="User Name"/>
+            <Label Text="Email Id"/>
+            <Entry Placeholder="Email Id"/>
+            <Label Text="Password"/>
+            <Entry Placeholder="Password"/>
+            <Button Text="Submit" BackgroundColor="Blue" TextColor="White" Padding="10" Clicked="Submit_Handle_Clicked"/>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

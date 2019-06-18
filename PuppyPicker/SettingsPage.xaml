@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.SettingsPage" Title="Settings">
+    <ContentPage.Content>
+        <Grid>
+          <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+            <!--
+            <Label Text="Settings" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" TextColor="White" BackgroundColor="#2699FB" />
+            -->
+            <Button Margin="10,0,10,0" BorderWidth="1" ContentLayout="Left,10" Image="iconimages.png" Text="Image Size" Grid.Row="1" Grid.Column="0" TextColor="#2699FB" BackgroundColor="#F1F9FF" />
+            <Button Margin="10,0,10,0" BorderWidth="1" Image="iconreminder.png" Grid.Row="2" Grid.Column="0" Text="Notifications" TextColor="#2699FB" BackgroundColor="#F1F9FF" />
+            <Button Margin="10,0,10,0" BorderWidth="1" Image="iconinformation" Text="Font Size" Grid.Row="3" Grid.Column="0" TextColor="#2699FB" BackgroundColor="#F1F9FF" />
+            <Button Margin="10,0,10,0" BorderWidth="1" Image="iconimage.png" Grid.Row="4" Grid.Column="0" Text="Themes" TextColor="#2699FB" BackgroundColor="#F1F9FF" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

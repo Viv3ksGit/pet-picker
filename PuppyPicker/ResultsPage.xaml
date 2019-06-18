@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.ResultsPage" Title="Your Matches">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>         
+            <Grid Margin="20,20,20,20" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="180" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+                <Label Grid.Row="0"  
+                   Text="Based on the answers given by you, the following dog breeds are advised for your consideration:" 
+                   Grid.ColumnSpan="2"/>
+                
+                <StackLayout Grid.Row="1" Grid.Column="0"> 
+                    <Image Source="huskeypuppy.jpg">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image> 
+                    <Label Text="Dog Name"/>
+                </StackLayout>
+                
+                <StackLayout Grid.Row="1" Grid.Column="1"> 
+                    <Image Source="huskeypuppy.jpg">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image> 
+                    <Label Text="Dog Name"/>
+                </StackLayout>
+                
+                <StackLayout Grid.Row="2" Grid.Column="0"> 
+                    <Image Source="huskeypuppy.jpg">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image> 
+                    <Label Text="Dog Name"/>
+                </StackLayout>
+                
+                <StackLayout Grid.Row="2" Grid.Column="1"> 
+                    <Image Source="huskeypuppy.jpg">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image> 
+                    <Label Text="Dog Name"/>
+                </StackLayout>
+                
+                <StackLayout Grid.Row="3" Grid.Column="0"> 
+                    <Image Source="huskeypuppy.jpg">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image> 
+                    <Label Text="Dog Name"/>
+                </StackLayout>
+                
+                
+                  
+            </Grid>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
