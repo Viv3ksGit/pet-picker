@@ -77,19 +77,19 @@ namespace PuppyPicker.Classes
                             break;
                         case CognitoResult.NotConfirmed:
                             Debug.WriteLine($"From:{this.GetType().Name},Email not confirmed");
-                            CrossToastPopUp.Current.ShowToastError("Please confirm your email to login");
+                            //CrossToastPopUp.Current.ShowToastError("Please confirm your email to login");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Email_Not_Activated\"}";
                             funcReply = ServerReplyStatus.Fail;
                             break;
                         case CognitoResult.InvalidPassword:
                             Debug.WriteLine($"From:{this.GetType().Name},Invalid Password");
-                            CrossToastPopUp.Current.ShowToastError("Invaild password");
+                            //CrossToastPopUp.Current.ShowToastError("Invaild password");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Password_Mismatch\"}";
                             funcReply = ServerReplyStatus.Fail;
                             break;
                         case CognitoResult.UserNotFound:
                             Debug.WriteLine($"From:{this.GetType().Name},Email not found");
-                            CrossToastPopUp.Current.ShowToastError("Credentials not found");
+                            //CrossToastPopUp.Current.ShowToastError("Credentials not found");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Email_Not_Exist\"}";
                             funcReply = ServerReplyStatus.Fail;
                             break;
@@ -101,8 +101,6 @@ namespace PuppyPicker.Classes
                     }
                     break;
             }
-
-
 
             return funcReply;
         }
