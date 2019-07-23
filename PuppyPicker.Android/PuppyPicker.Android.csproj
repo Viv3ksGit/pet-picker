@@ -72,6 +72,9 @@
     <PackageReference Include="AWSSDK.SecurityToken">
       <Version>3.3.101.31</Version>
     </PackageReference>
+    <PackageReference Include="Plugin.Toast">
+      <Version>2.1.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

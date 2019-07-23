@@ -4,6 +4,10 @@ using PuppyPicker.Classes;
 using PuppyPicker.Models;
 using PuppyPicker.ENUMS;
 using Xamarin.Forms;
+using Android.Widget;
+using Plugin.Toast;
+using System;
+using System.Threading.Tasks;
 
 namespace PuppyPicker.ViewModels
 {
@@ -41,13 +45,36 @@ namespace PuppyPicker.ViewModels
 
             var result = await serviceConnect.Connect(_user);
 
+            if (result == ServerReplyStatus.Success)
+            {
+                var myApp = Application.Current as App;
+                myApp.OnLogin();
 
-            var myApp = Application.Current as App;
-            myApp.OnLogin();
+               // CrossToastPopUp.Current.ShowToastSuccess("Sucessfully loggedin");
+
+                await DisplayAlert("Alert", "You have been alerted", "OK");
+
+                Debug.WriteLine("Auth complete-----");
+                Debug.WriteLine(result);
+
+            }
+
+            else
+            {
+                Debug.WriteLine("Auth complete-----");
+                Debug.WriteLine(result);
+
+            }
+
+
+
 
         }
-        
 
+        private Task DisplayAlert(string v1, string v2, string v3)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

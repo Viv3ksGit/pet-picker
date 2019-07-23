@@ -5,6 +5,7 @@ using System.Net.Http;
 using PuppyPicker.ENUMS;
 using System.Text;
 using Xamarin.Forms;
+using Plugin.Toast;
 using PuppyPicker.Classes;
 using PuppyPicker.BaseClasses;
 
@@ -46,6 +47,7 @@ namespace PuppyPicker
                 }
                 else
                 {
+                    
                     Debug.WriteLine($"Connection to service failed:{_connectionResponse.ReasonPhrase}");
                     //isConnectionError = true;
                     //returnMessage = Keys.SvcFail;

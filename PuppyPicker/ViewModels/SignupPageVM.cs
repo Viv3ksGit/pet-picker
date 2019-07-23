@@ -3,6 +3,7 @@ using System.Windows.Input;
 using PuppyPicker.Classes;
 using PuppyPicker.Models;
 using PuppyPicker.ENUMS;
+using Plugin.Toast;
 using Xamarin.Forms;
 
 namespace PuppyPicker.ViewModels
@@ -37,6 +38,8 @@ namespace PuppyPicker.ViewModels
 
             var myApp = Application.Current as App;
             myApp.OnSubmit();
+
+            CrossToastPopUp.Current.ShowToastMessage("Sucessfully registered");
 
         }
 
