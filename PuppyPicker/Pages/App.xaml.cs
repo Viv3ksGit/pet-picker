@@ -13,33 +13,33 @@ namespace PuppyPicker
             MainPage = new LoginPage();
         }
 
-		public void OnLogin()
-		{ 
+        public void OnLogin()
+        {
 
-			MainPage = new MainPage();
+            MainPage = new MainPage();
 
-		}
-		public void OnSubmit()
-		{
+        }
+        public void OnSubmit()
+        {
 
-			MainPage = new LoginPage();
+            MainPage = new LoginPage();
 
-		}
+        }
 
-		public void OnSignUp()
-		{
+        public void OnSignUp()
+        {
 
-			MainPage = new SignupPage();
+            MainPage = new SignupPage();
 
-		}
+        }
 
-		public void OnLogout()
-		{
+        public void OnLogout()
+        {
 
-			MainPage = new LoginPage();
+            MainPage = new LoginPage();
 
-		}
-		protected override void OnStart()
+        }
+        protected override void OnStart()
         {
             // Handle when your app starts
         }
