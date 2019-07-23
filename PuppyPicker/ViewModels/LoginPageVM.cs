@@ -22,8 +22,8 @@ namespace PuppyPicker.ViewModels
 
         private void SignUpClicked(object obj)
         {
-            var myApp = Application.Current as App;
-            myApp.OnSignUp();
+
+            MyApp.OnSignUp();
 
         }
 
@@ -49,21 +49,15 @@ namespace PuppyPicker.ViewModels
 
             if (result == ServerReplyStatus.Success)
             {
-                var myApp = Application.Current as App;
-                myApp.OnLogin();
-
                 Debug.WriteLine(result);
-                // CrossToastPopUp.Current.ShowToastSuccess("Sucessfully loggedin");
+                MyApp.OnLogin();
                 Debug.WriteLine("Auth complete-----");
-
-
             }
 
             else
             {
                 Debug.WriteLine(result);
-                var myApp = Application.Current as App;
-                await myApp.MainPage.DisplayAlert("Alert!", "Sign up Failed, Try again", "OK");
+                await MyApp.MainPage.DisplayAlert("Alert!", "Sign in Failed, Try again", "OK");
                 Debug.WriteLine("Auth complete-----");
             }
         }

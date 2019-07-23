@@ -5,10 +5,11 @@ using PuppyPicker.Models;
 using PuppyPicker.ENUMS;
 using Plugin.Toast;
 using Xamarin.Forms;
+using PuppyPicker.BaseClasses;
 
 namespace PuppyPicker.ViewModels
 {
-    public class SignupPageVM
+    public class SignupPageVM : BaseVM
     {
         public ICommand Submit_Handle_Clicked => new Command(SignUpClicked);
         public string SP_Title { get; set; }
@@ -34,15 +35,28 @@ namespace PuppyPicker.ViewModels
                 AuthType = AuthType.SignUp,
             };
 
+            IsBusy = true;
             var result = await serviceConnect.Connect(_user);
+            IsBusy = false;
 
-            var myApp = Application.Current as App;
-            myApp.OnSubmit();
+            if (result == ServerReplyStatus.Success)
+            {
 
-            CrossToastPopUp.Current.ShowToastMessage("Sucessfully registered");
+
+                Debug.WriteLine(result);
+                CrossToastPopUp.Current.ShowToastMessage("Sucessfully registered");
+                MyApp.OnSubmit();
+                Debug.WriteLine("Auth complete-----");
+
+            }
+
+            else
+            {
+                Debug.WriteLine(result);
+                await MyApp.MainPage.DisplayAlert("Alert!", "Sign up Failed, Try again", "OK");
+                Debug.WriteLine("Auth complete-----");
+            }
 
         }
-
-
     }
 }

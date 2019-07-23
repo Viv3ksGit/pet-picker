@@ -4,15 +4,19 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace PuppyPicker.BaseClasses
 {
     public class BaseVM : INotifyPropertyChanged
     {
+
+        public App MyApp = Application.Current as App;
         private bool _IsBusy;
 
         public BaseVM()
         {
+
         }
 
         public bool IsBusy
