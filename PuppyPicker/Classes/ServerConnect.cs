@@ -40,20 +40,20 @@ namespace PuppyPicker.Classes
                             break;
                         case CognitoResult.PasswordRequirementsFailed:
                             Debug.WriteLine("Password requirment failed");
-                            await MyApp.MainPage.DisplayAlert("Alert!", "Password requirments not fullfilled", "OK");
+                            await MyApp.MainPage.DisplayAlert("", "Password requirments not fullfilled", "OK");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Pass_Req_Failed\"}";
                             funcReply = ServerReplyStatus.Success;
                             break;
                         case CognitoResult.UserNameAlreadyUsed:
 
                             Debug.WriteLine("Email exists");
-                            await MyApp.MainPage.DisplayAlert("Alert!", "Email exists", "OK");
+                            await MyApp.MainPage.DisplayAlert("", "Email exists", "OK");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Email_Exist\"}";
                             funcReply = ServerReplyStatus.Success;
                             break;
                         default:
                             Debug.WriteLine($"strange error: {responseCognito.Error}");
-                            await MyApp.MainPage.DisplayAlert("Alert!", "Sign up Failed \n Try again", "OK");
+                            await MyApp.MainPage.DisplayAlert("Sign up Failed", "Try again", "OK");
                             //responseJson = "{\"error\":\"true\",\"message\":\"" + responseCognito.Error + "\"}";
                             funcReply = ServerReplyStatus.Fail;
                             break;
@@ -81,26 +81,26 @@ namespace PuppyPicker.Classes
                             break;
                         case CognitoResult.NotConfirmed:
                             Debug.WriteLine($"From:{this.GetType().Name},Email not confirmed");
-                            await MyApp.MainPage.DisplayAlert("Alert!", "Email not confirmed", "OK");
+                            await MyApp.MainPage.DisplayAlert("", "Email not confirmed", "OK");
                             //CrossToastPopUp.Current.ShowToastError("Please confirm your email to login");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Email_Not_Activated\"}";
                             funcReply = ServerReplyStatus.Fail;
                             break;
                         case CognitoResult.InvalidPassword:
                             Debug.WriteLine($"From:{this.GetType().Name},Invalid Password");
-                            await MyApp.MainPage.DisplayAlert("Alert!", "Invalid Password", "OK");
+                            await MyApp.MainPage.DisplayAlert("", "Invalid Password", "OK");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Password_Mismatch\"}";
                             funcReply = ServerReplyStatus.Fail;
                             break;
                         case CognitoResult.UserNotFound:
                             Debug.WriteLine($"From:{this.GetType().Name},Email not found");
-                            await MyApp.MainPage.DisplayAlert("Alert!", "Email not found", "OK");
+                            await MyApp.MainPage.DisplayAlert("", "Email not found", "OK");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Email_Not_Exist\"}";
                             funcReply = ServerReplyStatus.Fail;
                             break;
                         default:
                             Debug.WriteLine($"strange error: {responseCognito.Error}");
-                            await MyApp.MainPage.DisplayAlert("Alert!", "Sign in Failed \n Try again", "OK");
+                            await MyApp.MainPage.DisplayAlert("Sign in Failed", "Try again", "OK");
                             //responseJson = "{\"error\":\"true\",\"message\":\"" + responseCognito.Error + "\"}";
                             funcReply = ServerReplyStatus.Fail;
                             break;
