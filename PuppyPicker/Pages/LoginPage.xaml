@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <local:BaseClasses.BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:PuppyPicker" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.LoginPage">
     <ContentPage.Content>
         <Grid Padding="30">
@@ -8,6 +8,7 @@
                 <Entry Placeholder="Password" Keyboard="Email" Text="{Binding Password, Mode=TwoWay}" />
                 <Button Text="Sign In" BackgroundColor="Blue" TextColor="White" Padding="10" Command="{Binding Signin_Handle_Clicked}"/>
                 <Button Text="Sign Up" BackgroundColor="Blue" TextColor="White" Padding="10" Command="{Binding Signup_Handle_Clicked}"/>
+                <ActivityIndicator IsRunning="{Binding IsBusy}" Margin="20" />
             </StackLayout>  
         </Grid>
     </ContentPage.Content>

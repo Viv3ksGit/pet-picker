@@ -4,14 +4,14 @@ using PuppyPicker.Classes;
 using PuppyPicker.Models;
 using PuppyPicker.ENUMS;
 using Xamarin.Forms;
-using Android.Widget;
 using Plugin.Toast;
 using System;
 using System.Threading.Tasks;
+using PuppyPicker.BaseClasses;
 
 namespace PuppyPicker.ViewModels
 {
-    public class LoginPageVM
+    public class LoginPageVM : BaseVM
     {
         public string LP_Title { get; set; }
         public string Username { get; set; }
@@ -43,38 +43,29 @@ namespace PuppyPicker.ViewModels
                 AuthType = AuthType.SignIn,
             };
 
+            IsBusy = true;
             var result = await serviceConnect.Connect(_user);
+            IsBusy = false;
 
             if (result == ServerReplyStatus.Success)
             {
                 var myApp = Application.Current as App;
                 myApp.OnLogin();
 
-               // CrossToastPopUp.Current.ShowToastSuccess("Sucessfully loggedin");
-
-                await DisplayAlert("Alert", "You have been alerted", "OK");
-
-                Debug.WriteLine("Auth complete-----");
                 Debug.WriteLine(result);
+                // CrossToastPopUp.Current.ShowToastSuccess("Sucessfully loggedin");
+                Debug.WriteLine("Auth complete-----");
+
 
             }
 
             else
             {
-                Debug.WriteLine("Auth complete-----");
                 Debug.WriteLine(result);
-
+                var myApp = Application.Current as App;
+                await myApp.MainPage.DisplayAlert("Alert!", "Sign up Failed, Try again", "OK");
+                Debug.WriteLine("Auth complete-----");
             }
-
-
-
-
-        }
-
-        private Task DisplayAlert(string v1, string v2, string v3)
-        {
-            throw new NotImplementedException();
         }
     }
-
 }
