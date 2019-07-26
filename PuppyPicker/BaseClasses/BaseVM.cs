@@ -23,13 +23,15 @@ namespace PuppyPicker.BaseClasses
         {
             get { return _IsBusy; }
             set { SetValue(ref _IsBusy, value); }
+            
         }
 
-        private async void TestAsync()
+        protected async void TestAsync()
         {
             await Task.Delay(10000);
-            Debug.WriteLine("got response from server");
+            Debug.WriteLine("10 sec past Time");
             IsBusy = false;
+
         }
 
         //Start Inotify from here

@@ -43,6 +43,7 @@ namespace PuppyPicker.ViewModels
             };
 
             IsBusy = true;
+            TestAsync();
             var result = await serviceConnect.Connect(_user);
             IsBusy = false;
 

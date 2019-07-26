@@ -17,7 +17,7 @@
             
             
             
-            <Grid Grid.Row="1" VerticalOptions="CenterAndExpand" Padding="20">
+            <Grid Grid.Row="1" VerticalOptions="CenterAndExpand" Padding="10">
                 
                 <Button Padding="30" HorizontalOptions="Start" Grid.Row="0" Text="Home" Clicked="Home_Handle_Clicked"/>
                 <Button Padding="30" HorizontalOptions="Start" Grid.Row="1" Text="Match" Clicked="Match_Handle_Clicked"/>
@@ -28,7 +28,7 @@
                
             </Grid>
             
-            <Button Text="Logout" Grid.Row="2" Margin="50" HorizontalOptions="Start" VerticalOptions="Center"  Clicked="Logout_Handle_Clicked"/>
+            <Button Text="Logout" Grid.Row="2" Margin="40" HorizontalOptions="Start" VerticalOptions="Center"  Clicked="Logout_Handle_Clicked"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
