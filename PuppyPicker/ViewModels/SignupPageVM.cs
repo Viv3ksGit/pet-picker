@@ -12,6 +12,7 @@ namespace PuppyPicker.ViewModels
     public class SignupPageVM : BaseVM
     {
         public ICommand Submit_Handle_Clicked => new Command(SignUpClicked);
+        public ICommand Signin_Handle_Clicked => new Command(SignInClicked);
         public string SP_Title { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -22,6 +23,12 @@ namespace PuppyPicker.ViewModels
         public SignupPageVM()
         {
             SP_Title = "Signup";
+        }
+        private void SignInClicked(object obj)
+        {
+
+            MyApp.OnAlreadyRegistered();
+
         }
 
         async void SignUpClicked()

@@ -19,6 +19,7 @@ namespace PuppyPicker.ViewModels
 
         public ICommand Signin_Handle_Clicked => new Command(SignInClicked);
         public ICommand Signup_Handle_Clicked => new Command(SignUpClicked);
+        public ICommand Forgot_Password_Handle_Clicked => new Command(ForgotPasswordClicked);
 
         private ServerConnect serviceConnect => new ServerConnect();
 
@@ -35,8 +36,12 @@ namespace PuppyPicker.ViewModels
 
         }
 
+        private void ForgotPasswordClicked(object obj)
+        {
 
+            MyApp.OnForgotPassword();
 
+        }
 
         async public void SignInClicked()
         {

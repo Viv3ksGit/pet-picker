@@ -10,6 +10,7 @@
             <Label Text="Password"/>
             <Entry Placeholder="Password" Keyboard="Email" Text="{Binding Password, Mode=TwoWay}"/>
             <Button Text="Submit" BackgroundColor="Blue" TextColor="White" Padding="10" Command="{Binding Submit_Handle_Clicked}"/>
+            <Button Text="Already a user? Sign In" TextColor="Blue" Padding="10" Command="{Binding Signin_Handle_Clicked}"/>
             <ActivityIndicator IsRunning="{Binding IsBusy}" Margin="20" />    
         </StackLayout>
     </ContentPage.Content>

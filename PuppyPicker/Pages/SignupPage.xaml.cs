@@ -11,11 +11,6 @@ namespace PuppyPicker
         {
             InitializeComponent();
         }
-		void Submit_Handle_Clicked(object sender, System.EventArgs e)
-		{
-			var myApp = Application.Current as App;
-			myApp.OnSubmit();
-
-		}
+		
 	}
 }

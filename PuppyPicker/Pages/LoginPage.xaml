@@ -8,6 +8,7 @@
                 <Entry Placeholder="Password" Keyboard="Email" Text="{Binding Password, Mode=TwoWay}" />
                 <Button Text="Sign In" BackgroundColor="Blue" TextColor="White" Padding="10" Command="{Binding Signin_Handle_Clicked}"/>
                 <Button Text="Sign Up" BackgroundColor="Blue" TextColor="White" Padding="10" Command="{Binding Signup_Handle_Clicked}"/>
+                <Button Text="Forgot Password?" TextColor="Blue" Padding="10" Command="{Binding Forgot_Password_Handle_Clicked}"/>
                 <ActivityIndicator IsRunning="{Binding IsBusy}" Margin="20" />
             </StackLayout>  
         </Grid>

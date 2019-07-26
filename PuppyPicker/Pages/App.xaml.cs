@@ -13,6 +13,20 @@ namespace PuppyPicker
             MainPage = new LoginPage();
         }
 
+        public void OnAlreadyRegistered()
+        {
+
+            MainPage = new LoginPage();
+
+        }
+
+        public void OnSignUp()
+        {
+
+            MainPage = new SignupPage();
+
+        }
+
         public void OnLogin()
         {
 
@@ -26,10 +40,10 @@ namespace PuppyPicker
 
         }
 
-        public void OnSignUp()
+        public void OnForgotPassword()
         {
 
-            MainPage = new SignupPage();
+            //MainPage = new ForgotPasswordPage();
 
         }
 
