@@ -29,7 +29,7 @@ namespace PuppyPicker.BaseClasses
         protected async void TestAsync()
         {
             await Task.Delay(10000);
-            Debug.WriteLine("10 sec past Time");
+            Debug.WriteLine("10 sec past");
             IsBusy = false;
 
         }
