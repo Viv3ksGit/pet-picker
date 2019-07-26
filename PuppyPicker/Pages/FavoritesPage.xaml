@@ -27,7 +27,7 @@
                                                 <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
                                             </Image.GestureRecognizers>
                                         </Image>
-                                        <Label Grid.Row="1" Text="Dog Name" VerticalOptions="End"/>
+                                        <Label Grid.Row="1" Text="{Binding DogName}" VerticalOptions="End"/>
                             
                             </Grid>
                             <Grid Margin="0,50,0,0" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray">
@@ -41,7 +41,7 @@
                                                 <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
                                             </Image.GestureRecognizers>
                                         </Image>
-                                        <Label  Grid.Row="1" Text="Dog Name" VerticalOptions="End"/>
+                                        <Label  Grid.Row="1" Text="{Binding DogName}" VerticalOptions="End"/>
                             </Grid>
                             
                             <Grid Grid.Row="1" Grid.Column="0" Margin="0,50,0,0" BackgroundColor="Gray" >
@@ -56,7 +56,7 @@
                                                 <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
                                             </Image.GestureRecognizers>
                                         </Image>
-                                        <Label Grid.Row="1" Text="Dog Name" VerticalOptions="End"/>
+                                        <Label Grid.Row="1" Text="{Binding DogName}" VerticalOptions="End"/>
                             </Grid>
                 
                             <Grid Grid.Row="1" Grid.Column="1" Margin="0,50,0,0" BackgroundColor="Gray">
@@ -70,7 +70,7 @@
                                                 <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
                                             </Image.GestureRecognizers>
                                         </Image>
-                                        <Label  Grid.Row="1" Text="Dog Name" VerticalOptions="End"/>
+                                        <Label  Grid.Row="1" Text="{Binding DogName}" VerticalOptions="End"/>
                             </Grid>
                 
                             <Grid Grid.Row="2" Grid.Column="0" Margin="0,50,0,0" BackgroundColor="Gray" >
@@ -85,7 +85,7 @@
                                                 <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
                                             </Image.GestureRecognizers>
                                         </Image>
-                                        <Label Grid.Row="1" Text="Dog Name" VerticalOptions="End"/>
+                                        <Label Grid.Row="1" Text="{Binding DogName}" VerticalOptions="End"/>
                             
                             </Grid>
                             
@@ -100,11 +100,16 @@
                                                 <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
                                             </Image.GestureRecognizers>
                                         </Image>
-                                        <Label  Grid.Row="1" Text="Dog Name" VerticalOptions="End"/>
+                                        <Label  Grid.Row="1" Text="{Binding DogName}" VerticalOptions="End"/>
                             </Grid>
-                
-                
-                            <!--
+                    </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</local:BaseClasses.BasePage>
+
+
+
+ <!--
                             <StackLayout Grid.Row="0" Grid.Column="1" Margin="10">
                                         <Image Source="pug.jpeg">
                                             <Image.GestureRecognizers>
@@ -186,7 +191,3 @@
                                         <Label Text="Dog Name"/>
                             </StackLayout>
                 -->
-                    </Grid>
-        </ScrollView>
-    </ContentPage.Content>
-</local:BaseClasses.BasePage>
