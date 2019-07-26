@@ -17,7 +17,6 @@ namespace PuppyPicker.BaseClasses
         {
             if (this.GetType() == typeof(MainPage))
             {
-                //BindingContext = Activator.CreateInstance(typeof(MainPageVM));
                 BindingContext = new MainPageVM();
             }
             else if (this.GetType() == typeof(LoginPage))
@@ -27,6 +26,10 @@ namespace PuppyPicker.BaseClasses
             else if (this.GetType() == typeof(SignupPage))
             {
                 BindingContext = new SignupPageVM();
+            }
+            else if (this.GetType() == typeof(SettingsPage))
+            {
+                BindingContext = new SettingsPageVM();
             }
 
         }

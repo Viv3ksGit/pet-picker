@@ -20,6 +20,14 @@ namespace PuppyPicker.ViewModels
         public ICommand Signin_Handle_Clicked => new Command(SignInClicked);
         public ICommand Signup_Handle_Clicked => new Command(SignUpClicked);
 
+        private ServerConnect serviceConnect => new ServerConnect();
+
+        public LoginPageVM()
+        {
+            LP_Title = "Login";
+        }
+
+
         private void SignUpClicked(object obj)
         {
 
@@ -27,11 +35,8 @@ namespace PuppyPicker.ViewModels
 
         }
 
-        private ServerConnect serviceConnect => new ServerConnect();
-        public LoginPageVM()
-        {
-            LP_Title = "Login Page";
-        }
+
+
 
         async public void SignInClicked()
         {

@@ -13,7 +13,7 @@ namespace PuppyPicker.ViewModels
 
         public MainPageVM()
         {
-            PH_Title = "Puppy Picker app";
+            PH_Title = "Puppy Picker";
         }
 
         void OnSignUpClicked()

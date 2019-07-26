@@ -13,6 +13,7 @@ namespace PuppyPicker.Classes
 
         public ServerConnect()
         {
+            ;
         }
 
         async public Task<ServerReplyStatus> Connect(UserAuthInfoObject _connectInfo)
