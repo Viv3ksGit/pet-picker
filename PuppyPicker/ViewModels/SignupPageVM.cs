@@ -60,7 +60,7 @@ namespace PuppyPicker.ViewModels
             else
             {
                 Debug.WriteLine(result);
-                await MyApp.MainPage.DisplayAlert("Alert!", "Sign up Failed, Try again", "OK");
+                await MyApp.MainPage.DisplayAlert("", "Sign up Failed, Try again", "OK");
                 Debug.WriteLine("Auth complete-----");
             }
 
