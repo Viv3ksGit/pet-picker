@@ -31,6 +31,10 @@ namespace PuppyPicker.BaseClasses
             {
                 BindingContext = new SettingsPageVM();
             }
+            else if (this.GetType() == typeof(FavoritesPage))
+            {
+                BindingContext = new FavoritesPageVM();
+            }
 
         }
     }
