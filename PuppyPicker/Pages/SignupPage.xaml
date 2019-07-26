@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<local:BaseClasses.BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:PuppyPicker" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.SignupPage">
+<local:BaseClasses.BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:PuppyPicker" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.SignupPage" Title="{Binding SP_Title}" >
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
             <Label Text="Enter your Details for account creation"/>

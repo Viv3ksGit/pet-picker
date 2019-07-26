@@ -21,7 +21,7 @@ namespace PuppyPicker.ViewModels
 
         public SignupPageVM()
         {
-            SP_Title = "Signup Page";
+            SP_Title = "Signup";
         }
 
         async void SignUpClicked()
