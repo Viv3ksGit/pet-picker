@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.DogProfilePage" Title="Profile">
+<local:BaseClasses.BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:PuppyPicker" x:Class="PuppyPicker.DogProfilePage" Title="Profile">
     <ContentPage.Content>
         <ScrollView>
         <Grid>
@@ -13,24 +13,122 @@
             
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Dog Name"  TextColor="Black" Margin="30,10" HorizontalOptions="StartAndExpand" FontSize= "30" />
-                    <Button Text="Favorite" Margin="30,0" BackgroundColor="Blue" TextColor="White" Padding="10" HorizontalOptions="End" />
+                    
+                    <Button Text="{Binding MyText}" Margin="30,10,30,20" BackgroundColor="Blue" TextColor="White" Padding="10" HorizontalOptions="End" Command="{Binding Favorite_Handle_Clicked}"/>
                 </StackLayout>
             
         
-                <Label Text="Enter the description here, basic details about the dog" Margin="30,10" FontSize= "14" />
+                <Label Text="{Binding About}" Margin="30,10" FontSize= "14" />
                 
-                <Label Text="Charateristics" Margin="30,2" FontSize= "20" TextColor="Black" />
+                <Label Text="Charateristics" Margin="30,2,0,0" FontSize= "20" TextColor="Black" />
                 
-                <StackLayout Orientation="Horizontal" Margin = "30,10" >
-                    <Label Text="Charateristics"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9"  />
-                    <Label Text="Charateristics"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
-                    <Label Text="Charateristics"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
-                    <Label Text="Charateristics"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" /> 
+                <StackLayout Orientation="Horizontal" Margin = "30,10,10,10" >
+                    <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9"  />
+                    <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
+                    <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
+                    <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" /> 
                 </StackLayout>
-            
-                <Label Text="Photos" Margin="30,2" FontSize= "20" TextColor="Black" />
-                    <Grid HorizontalOptions="Center">
+                   
+                    <Grid Padding="5,5,5,0">
                         
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height = "300" />
+                            <RowDefinition Height = "300" />
+                            <RowDefinition Height = "300" />
+                        </Grid.RowDefinitions>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width= "200" />
+                            <ColumnDefinition Width= "200" />
+                        </Grid.ColumnDefinitions>
+                            
+                        <Label Text="Photos" Margin="30,10,10,10" FontSize= "20" TextColor="Black" />
+                        
+                            <Grid Margin="0,50,0,0" Grid.Row="0" Grid.Column="0"  BackgroundColor="Gray" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height = "250"  />
+                                </Grid.RowDefinitions>
+                            
+                                        <Image Aspect="AspectFit" VerticalOptions="CenterAndExpand" Grid.Row="0" Source="{Binding ImageFile}">
+                                        <!--<Image Source="{Binding ImageFile}"> -->
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                            
+                            </Grid>
+                            <Grid Margin="0,50,0,0" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height = "250" />
+                                </Grid.RowDefinitions>
+                                        <Image Aspect="AspectFit" VerticalOptions="CenterAndExpand" Grid.Row="0" Source="{Binding ImageFile}" >
+                                        <!--<Image Source="{Binding ImageFile}"> -->
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                            </Grid>
+                            
+                            <Grid Grid.Row="1" Grid.Column="0" Margin="0,50,0,0" BackgroundColor="Gray" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height = "250"  />
+                                </Grid.RowDefinitions>
+                            
+                                        <Image Aspect="AspectFit" VerticalOptions="CenterAndExpand" Grid.Row="0" Source="{Binding ImageFile}">
+                                        <!--<Image Source="{Binding ImageFile}"> -->
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                            </Grid>
+                
+                            <Grid Grid.Row="1" Grid.Column="1" Margin="0,50,0,0" BackgroundColor="Gray">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height = "250" />
+                                </Grid.RowDefinitions>
+                                        <Image Aspect="AspectFit" VerticalOptions="CenterAndExpand" Grid.Row="0" Source="{Binding ImageFile}">
+                                        <!--<Image Source="{Binding ImageFile}"> -->
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                            </Grid>
+                
+                            <Grid Grid.Row="2" Grid.Column="0" Margin="0,50,0,0" BackgroundColor="Gray" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height = "250"  />
+                                </Grid.RowDefinitions>
+                            
+                                        <Image Aspect="AspectFit" VerticalOptions="CenterAndExpand" Grid.Row="0" Source="{Binding ImageFile}">
+                                        <!--<Image Source="{Binding ImageFile}"> -->
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                            
+                            </Grid>
+                            
+                            <Grid Grid.Row="2" Grid.Column="1" Margin="0,50,0,0" BackgroundColor="Gray">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height = "250" />
+                                </Grid.RowDefinitions>
+                                        <Image Aspect="AspectFit" VerticalOptions="CenterAndExpand" Grid.Row="0" Source="{Binding ImageFile}">
+                                        <!--<Image Source="{Binding ImageFile}"> -->
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                            </Grid>
+                    </Grid>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <!--
+                    <Grid HorizontalOptions="Center">
+                       
                         <Grid.RowDefinitions>
                             <RowDefinition Height = "100"/>
                             <RowDefinition Height = "100"/>
@@ -42,7 +140,6 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100" />
                             <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="100" />
                         </Grid.ColumnDefinitions>
                             
                             <StackLayout Grid.Row="0" Grid.Column="0">
@@ -52,20 +149,12 @@
                             <StackLayout Grid.Row="0" Grid.Column="1">
                                         <Image Source="huskeypuppy.jpg" />
                             </StackLayout>
-                            
-                            <StackLayout Grid.Row="0" Grid.Column="2" >
-                                        <Image Source="huskeypuppy.jpg" />
-                            </StackLayout>
-                            
+                        
                             <StackLayout Grid.Row="1" Grid.Column="0">
                                         <Image Source="huskeypuppy.jpg" />
                             </StackLayout>
                             
                             <StackLayout Grid.Row="1" Grid.Column="1">
-                                        <Image Source="huskeypuppy.jpg" />
-                            </StackLayout>
-                            
-                            <StackLayout Grid.Row="1" Grid.Column="2" >
                                         <Image Source="huskeypuppy.jpg" />
                             </StackLayout>
                             
@@ -77,10 +166,6 @@
                                         <Image Source="huskeypuppy.jpg" />
                             </StackLayout>
                             
-                            <StackLayout Grid.Row="2" Grid.Column="2" >
-                                        <Image Source="huskeypuppy.jpg" />
-                            </StackLayout>    
-                            
                             <StackLayout Grid.Row="3" Grid.Column="0">
                                         <Image Source="huskeypuppy.jpg" />
                             </StackLayout>
@@ -88,11 +173,7 @@
                             <StackLayout Grid.Row="3" Grid.Column="1">
                                         <Image Source="huskeypuppy.jpg" />
                             </StackLayout>
-                            
-                            <StackLayout Grid.Row="3" Grid.Column="2" >
-                                        <Image Source="huskeypuppy.jpg" />
-                            </StackLayout>
-                            
+                        
                             <StackLayout Grid.Row="4" Grid.Column="0">
                                         <Image Source="huskeypuppy.jpg" />
                             </StackLayout>
@@ -101,12 +182,10 @@
                                         <Image Source="huskeypuppy.jpg" />
                             </StackLayout>
                             
-                            <StackLayout Grid.Row="4" Grid.Column="2" >
-                                        <Image Source="huskeypuppy.jpg" />
-                            </StackLayout>  
                     </Grid>
+                        -->
             </StackLayout>  
         </Grid>
        </ScrollView>
     </ContentPage.Content>
-</ContentPage>
+</local:BaseClasses.BasePage>
