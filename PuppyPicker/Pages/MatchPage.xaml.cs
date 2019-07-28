@@ -1,11 +1,12 @@
 ﻿using System;
+using PuppyPicker.BaseClasses;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
 
 namespace PuppyPicker
 {
-    public partial class MatchPage : ContentPage
+    public partial class MatchPage : BasePage
     {
         public MatchPage()
         {

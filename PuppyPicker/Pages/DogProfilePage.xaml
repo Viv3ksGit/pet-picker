@@ -121,12 +121,15 @@
                             </Grid>
                     </Grid>
                     
-                    
-                    
-                    
-                    
-                    
-                    <!--
+                   
+            </StackLayout>  
+        </Grid>
+       </ScrollView>
+    </ContentPage.Content>
+</local:BaseClasses.BasePage>
+
+
+ <!--
                     <Grid HorizontalOptions="Center">
                        
                         <Grid.RowDefinitions>
@@ -184,8 +187,3 @@
                             
                     </Grid>
                         -->
-            </StackLayout>  
-        </Grid>
-       </ScrollView>
-    </ContentPage.Content>
-</local:BaseClasses.BasePage>
