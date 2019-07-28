@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.MatchHistoryPage" Title="Match History">
+<local:BaseClasses.BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:PuppyPicker" x:Class="PuppyPicker.MatchHistoryPage" Title="Match History">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView Margin="10, 20, 10, 10" VerticalOptions="StartAndExpand">
+            <StackLayout >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                         <ColumnDefinition Width= "*" />
+                         <ColumnDefinition Width= "3*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button Grid.Row="0" Grid.Column="0" Margin="0, 5, 0, 5" Text="Go" BackgroundColor="Olive"/>
+                    <Label Grid.Row="0" Grid.Column="1" Margin="0, 5, 0, 5" Text="{Binding SurveyTitle1}" VerticalOptions="Center"/>
+                    
+                    <Button Grid.Row="1" Grid.Column="0" Margin="0, 5, 0, 5" Text="Go" BackgroundColor="Olive"/>
+                    <Label Grid.Row="1" Grid.Column="1" Margin="0, 5, 0, 5" Text="{Binding SurveyTitle2}" VerticalOptions="Center"/>
+                    
+                    <Button Grid.Row="2" Grid.Column="0" Margin="0, 5, 0, 5" Text="Go" BackgroundColor="Olive"/>
+                    <Label Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 5" Text="{Binding SurveyTitle3}" VerticalOptions="Center"/>
+                    
+                    <Button Grid.Row="3" Grid.Column="0" Margin="0, 5, 0, 5" Text="Go" BackgroundColor="Olive"/>
+                    <Label Grid.Row="3" Grid.Column="1" Margin="0, 5, 0, 5" Text="{Binding SurveyTitle4}" VerticalOptions="Center"/>
+                    
+                    <Button Grid.Row="4" Grid.Column="0" Margin="0, 5, 0, 5" Text="Go" BackgroundColor="Olive"/>
+                    <Label Grid.Row="4" Grid.Column="1" Margin="0, 5, 0, 5" Text="{Binding SurveyTitle5}" VerticalOptions="Center"/>
+                    
+                    
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</local:BaseClasses.BasePage>
+
+<!--
+<ScrollView>
             <StackLayout Padding="30">
                 <Label Text= "Survey Title" BackgroundColor="Aqua" VerticalTextAlignment="Center"/>
                 <Label Text= "Survey Title" BackgroundColor="Aqua" VerticalTextAlignment="Center"/>
@@ -30,5 +61,5 @@
                 
             </StackLayout>
         </ScrollView>
-    </ContentPage.Content>
-</ContentPage>
+
+-->

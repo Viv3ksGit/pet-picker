@@ -47,6 +47,10 @@ namespace PuppyPicker.BaseClasses
             {
                 BindingContext = new MatchPageVM();
             }
+            else if (this.GetType() == typeof(MatchHistoryPage))
+            {
+                BindingContext = new MatchHistoryPageVM();
+            }
         }
     }
 }
