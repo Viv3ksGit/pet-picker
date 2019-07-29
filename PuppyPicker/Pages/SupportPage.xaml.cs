@@ -29,6 +29,12 @@ namespace PuppyPicker
             }
         }
 
+        void Call_Clicked(object sender, System.EventArgs e)
+        {
+            var phoneDialer = CrossMessaging.Current.PhoneDialer;
+            if (phoneDialer.CanMakePhoneCall)
+                phoneDialer.MakePhoneCall("+0000000000");
         }
+    }
     }
 
