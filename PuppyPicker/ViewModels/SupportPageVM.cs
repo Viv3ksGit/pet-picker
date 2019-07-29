@@ -12,6 +12,8 @@ namespace PuppyPicker.ViewModels
 
         public ICommand Email_Clicked => new Command(EmailClicked);
         public ICommand Call_Clicked => new Command(CallClicked);
+        public ICommand Report_Clicked => new Command(ReportClicked);
+        public ICommand Donation_Clicked => new Command(DonationClicked);
 
         public SupportPageVM()
         {
@@ -31,28 +33,56 @@ namespace PuppyPicker.ViewModels
         }
 
 
-            private void EmailClicked(object obj)
+        private void EmailClicked(object obj)
 
+        {
+            var emailMessenger = CrossMessaging.Current.EmailMessenger;
+            if (emailMessenger.CanSendEmail)
             {
-                var emailMessenger = CrossMessaging.Current.EmailMessenger;
-                if (emailMessenger.CanSendEmail)
-                {
 
-                    var email = new EmailMessageBuilder()
-                      .To("to.Vivekmohan.rhul@gmail.com")
-                      .Subject("Suggestion/Feedback")
-                      .Body("Hello Developer")
-                      .Build();
+                var email = new EmailMessageBuilder()
+                  .To("to.Vivekmohan.rhul@gmail.com")
+                  .Subject("Suggestion/Feedback")
+                  .Body("Hello Developer")
+                  .Build();
 
-                    emailMessenger.SendEmail(email);
-                }
+                emailMessenger.SendEmail(email);
+            }
 
-                else
-                {
-                   MyApp.MainPage.DisplayAlert("Application not found", "Please install application to use this service", "OK");
-
-                }
+            else
+            {
+                MyApp.MainPage.DisplayAlert("Application not found", "Please install application to use this service", "OK");
 
             }
+
+        }
+
+        private void ReportClicked(object obj)
+        {
+            var emailMessenger = CrossMessaging.Current.EmailMessenger;
+            if (emailMessenger.CanSendEmail)
+            {
+
+                var email = new EmailMessageBuilder()
+                  .To("to.Vivekmohan.rhul@gmail.com")
+                  .Subject("Reporting a bug")
+                  .Body("Hello Developer")
+                  .Build();
+
+                emailMessenger.SendEmail(email);
+            }
+
+            else
+            {
+                MyApp.MainPage.DisplayAlert("Application not found", "Please install application to use this service", "OK");
+
+            }
+        }
+
+        private void DonationClicked(object obj)
+        {
+            MyApp.MainPage.DisplayAlert("Denied access", "Donation page is currently not unavailable", "OK");
+        }
     }
+
 }
