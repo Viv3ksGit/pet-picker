@@ -19,6 +19,7 @@
     <PackageReference Include="AWSSDK.Extensions.CognitoAuthentication" Version="0.9.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Plugin.Toast" Version="2.1.2" />
+    <PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
