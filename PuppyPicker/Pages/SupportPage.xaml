@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.SupportPage" Title="Support">
+<local:BaseClasses.BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:PuppyPicker"  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.SupportPage" Title="{Binding SSP_Title}">
     <ContentPage.Content>
          <Grid>
           <Grid.RowDefinitions>
@@ -15,10 +15,10 @@
             <!--
             <Label Text="Support" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" TextColor="White" BackgroundColor="#2699FB" />
             -->
-            <Button Margin="10,0,10,0" BorderWidth="1" ContentLayout="Left,10" Image="iconpencil.png" Text="Suggestion Feedback" Grid.Row="1" Grid.Column="0" TextColor="#2699FB" BackgroundColor="#F1F9FF" Clicked="Support_Clicked"/>
+            <Button Margin="10,0,10,0" BorderWidth="1" ContentLayout="Left,10" Image="iconpencil.png" Text="Suggestion Feedback" Grid.Row="1" Grid.Column="0" TextColor="#2699FB" BackgroundColor="#F1F9FF" Command="{Binding Email_Clicked}"/>
             <Button Margin="10,0,10,0" BorderWidth="1" Image="iconmail.png" Grid.Row="2" Grid.Column="0" Text="Report Bugs" TextColor="#2699FB" BackgroundColor="#F1F9FF" />
-            <Button Margin="10,0,10,0" BorderWidth="1" Image="iconphone.png" Text="Call Support" Grid.Row="3" Grid.Column="0" TextColor="#2699FB" BackgroundColor="#F1F9FF" Clicked="Call_Clicked" />
+            <Button Margin="10,0,10,0" BorderWidth="1" Image="iconphone.png" Text="Call Support" Grid.Row="3" Grid.Column="0" TextColor="#2699FB" BackgroundColor="#F1F9FF" Command="{Binding Call_Clicked}"/>
             <Button Margin="10,0,10,0" BorderWidth="1" Image="iconpricetag.png" Grid.Row="4" Grid.Column="0" Text="Donation" TextColor="#2699FB" BackgroundColor="#F1F9FF" />
         </Grid>
     </ContentPage.Content>
-</ContentPage>
+</local:BaseClasses.BasePage>
