@@ -1,7 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <local:BaseClasses.BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:PuppyPicker" x:Class="PuppyPicker.SettingsPage" Title="{Binding SP_Title}">
     <ContentPage.Content>
-        <Grid>
+        <TableView Intent="Settings">
+    <TableRoot>
+        <TableSection Title="My settings">
+            <ViewCell>
+                <StackLayout Orientation="Horizontal" Margin="15,0,15,0">
+                    <Label Text="Image size"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                           VerticalOptions="Center"/>
+                    <Picker x:Name="imageSize"
+                            Title="Image Size"
+                            TitleColor="Red" HorizontalOptions="EndAndExpand">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Small</x:String>
+                                <x:String>Medium</x:String>
+                                <x:String>Large</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                        <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                    </Picker>
+                </StackLayout>
+            </ViewCell>
+            <ViewCell>
+                <StackLayout Orientation="Horizontal" Margin="15,0,15,0">
+                    <Label Text="Font size"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                           VerticalOptions="Center"/>
+                    <Picker x:Name="fontSize"
+                            Title="Font Size"
+                            TitleColor="Red" HorizontalOptions="EndAndExpand">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Small</x:String>
+                                <x:String>Medium</x:String>
+                                <x:String>Large</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                        <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                    </Picker>
+                </StackLayout>
+            </ViewCell>
+            <ViewCell>
+                <StackLayout Orientation="Horizontal" Margin="15,0,15,0">
+                    <Label Text="Theme"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                           VerticalOptions="Center"/>
+                    <Picker x:Name="appTheme"
+                            Title="Theme"
+                            TitleColor="Red" HorizontalOptions="EndAndExpand">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Summer</x:String>
+                                <x:String>Default</x:String>
+                                <x:String>Beach</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                        <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                    </Picker>
+                </StackLayout>
+            </ViewCell>
+        </TableSection>
+    </TableRoot>
+</TableView>
+        <!--<Grid>
           <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
                 <RowDefinition Height="50" />
@@ -12,10 +78,11 @@
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
           </Grid.ColumnDefinitions>
+            
             <Button Command="{Binding Image_Size_Handle_Clicked}" Margin="10,0,10,0" BorderWidth="1" ContentLayout="Left,10" Image="iconimages.png" Text="Image Size" Grid.Row="1" Grid.Column="0" TextColor="#2699FB" BackgroundColor="#F1F9FF" />
             <Button Command="{Binding Notifications_Handle_Clicked}" Margin="10,0,10,0" BorderWidth="1" Image="iconreminder.png" Grid.Row="2" Grid.Column="0" Text="Notifications" TextColor="#2699FB" BackgroundColor="#F1F9FF" />
             <Button Command="{Binding Font_Size_Handle_Clicked}" Margin="10,0,10,0" BorderWidth="1" Image="iconinformation" Text="Font Size" Grid.Row="3" Grid.Column="0" TextColor="#2699FB" BackgroundColor="#F1F9FF" />
             <Button Command="{Binding Themes_Handle_Clicked}" Margin="10,0,10,0" BorderWidth="1" Image="iconimage.png" Grid.Row="4" Grid.Column="0" Text="Themes" TextColor="#2699FB" BackgroundColor="#F1F9FF" />
-        </Grid>
+        </Grid>-->
     </ContentPage.Content>
 </local:BaseClasses.BasePage>
