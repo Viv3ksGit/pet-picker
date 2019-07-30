@@ -32,7 +32,9 @@ namespace PuppyPicker.ViewModels
 
         public string ImageFile
         {
-            get { return string.Format("huskeypuppy.jpg"); }
+            get; set;
+            //get { return string.Format("huskeypuppy.jpg");  }
+            //set { this.ImageFile = value; }
         }
 
         public string MyText
