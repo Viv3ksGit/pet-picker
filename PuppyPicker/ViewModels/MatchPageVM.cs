@@ -40,7 +40,9 @@ namespace PuppyPicker.ViewModels
         {
             SurveyTitle = entryTitle;
 
-            //MyApp.MainPage.Navigation.PushAsync(new NavigationPage(new ResultsPage()));
+            var myPage = MyApp.MainPage as MasterDetailPage;
+            //myPage.Detail = new ResultsPage();
+            myPage.Detail.Navigation.PushAsync(new ResultsPage());
         }
 
         public string Question1
