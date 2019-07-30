@@ -13,7 +13,7 @@ namespace PuppyPicker.Classes
 
         public ServerConnect()
         {
-            ;
+            
         }
 
         async public Task<ServerReplyStatus> Connect(UserAuthInfoObject _connectInfo)
@@ -43,14 +43,14 @@ namespace PuppyPicker.Classes
                             Debug.WriteLine("Password requirment failed");
                             await MyApp.MainPage.DisplayAlert("", "Password requirments not fullfilled", "OK");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Pass_Req_Failed\"}";
-                            funcReply = ServerReplyStatus.Success;
+                            funcReply = ServerReplyStatus.PasswordRequirementsFailed;
                             break;
                         case CognitoResult.UserNameAlreadyUsed:
 
                             Debug.WriteLine("Email exists");
                             await MyApp.MainPage.DisplayAlert("", "Email exists", "OK");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Email_Exist\"}";
-                            funcReply = ServerReplyStatus.Success;
+                            funcReply = ServerReplyStatus.UserNameAlreadyUsed;
                             break;
                         default:
                             Debug.WriteLine($"strange error: {responseCognito.Error}");
@@ -69,7 +69,9 @@ namespace PuppyPicker.Classes
                 case AuthType.SignIn:
                     user = _connectInfo.Email.Trim().ToLower();
                     pass = _connectInfo.Password.Trim();
+
                     responseCognito = await AuthApi.SignIn(user, pass);
+
                     Debug.WriteLine($" Reply from aws Auth: {responseCognito.Result} ");
                     switch (responseCognito.Result)
                     {
@@ -85,19 +87,19 @@ namespace PuppyPicker.Classes
                             await MyApp.MainPage.DisplayAlert("", "Email not confirmed", "OK");
                             //CrossToastPopUp.Current.ShowToastError("Please confirm your email to login");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Email_Not_Activated\"}";
-                            funcReply = ServerReplyStatus.Fail;
+                            funcReply = ServerReplyStatus.NotConfirmed;
                             break;
                         case CognitoResult.InvalidPassword:
                             Debug.WriteLine($"From:{this.GetType().Name},Invalid Password");
                             await MyApp.MainPage.DisplayAlert("", "Invalid Password", "OK");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Password_Mismatch\"}";
-                            funcReply = ServerReplyStatus.Fail;
+                            funcReply = ServerReplyStatus.InvalidPassword;
                             break;
                         case CognitoResult.UserNotFound:
                             Debug.WriteLine($"From:{this.GetType().Name},Email not found");
                             await MyApp.MainPage.DisplayAlert("", "Email not found", "OK");
                             //responseJson = "{\"error\":\"true\",\"message\":\"Email_Not_Exist\"}";
-                            funcReply = ServerReplyStatus.Fail;
+                            funcReply = ServerReplyStatus.UserNotFound;
                             break;
                         default:
                             Debug.WriteLine($"strange error: {responseCognito.Error}");
