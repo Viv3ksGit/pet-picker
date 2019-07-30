@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace PuppyPicker
 { 
-    public partial class SignupPage : BaseClasses.BasePage
+    public partial class SignupPage : BasePage
     {
         public SignupPage()
         {

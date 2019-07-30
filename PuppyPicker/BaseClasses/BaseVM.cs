@@ -11,21 +11,22 @@ namespace PuppyPicker.BaseClasses
     public class BaseVM : INotifyPropertyChanged
     {
 
-        public App MyApp = Application.Current as App;
+        
         private bool _IsBusy;
-        public event PropertyChangedEventHandler PropertyChanged;
+        public bool IsBusy
+        {
+            get { return _IsBusy; }
+            set { SetValue(ref _IsBusy, value); }
+
+        }
+        protected App MyApp = Application.Current as App;
 
         public BaseVM()
         {
 
         }
 
-        public bool IsBusy
-        {
-            get { return _IsBusy; }
-            set { SetValue(ref _IsBusy, value); }
-            
-        }
+       
 
         protected async void TestAsync()
         {
@@ -36,6 +37,7 @@ namespace PuppyPicker.BaseClasses
         }
 
         //Start Inotify from here
+        public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

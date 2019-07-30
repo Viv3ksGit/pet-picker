@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <local:BaseClasses.BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:PuppyPicker" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.SignupPage" Title="{Binding SP_Title}" >
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
@@ -7,8 +7,13 @@
             <Entry Placeholder="User Name" Keyboard="Email" Text="{Binding UserName, Mode=TwoWay}"/>
             <Label Text="Email Id"/>
             <Entry Placeholder="Email Id" Keyboard="Email" Text="{Binding EmailId, Mode=TwoWay}"/>
+            <Label Text="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character" Margin="0,20,0,2"/>
+
             <Label Text="Password"/>
             <Entry Placeholder="Password" Keyboard="Email" Text="{Binding Password, Mode=TwoWay}"/>
+            <Label Text="Verify Password"/>
+            <Entry Placeholder="Verify Password" Keyboard="Email" Text="{Binding PasswordVerif, Mode=TwoWay}" />
+
             <Button Text="Submit" BackgroundColor="Blue" TextColor="White" Padding="10" Command="{Binding Submit_Handle_Clicked}"/>
             <Button Text="Already a user? Sign In" TextColor="Blue" Padding="10" Command="{Binding Signin_Handle_Clicked}"/>
             <ActivityIndicator IsRunning="{Binding IsBusy}" Margin="20" />    

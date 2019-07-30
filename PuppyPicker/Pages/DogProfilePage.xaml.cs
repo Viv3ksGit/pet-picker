@@ -13,7 +13,7 @@ namespace PuppyPicker
             InitializeComponent();
         }
 
-        async void OnChartTapGestureTap(object sender, EventArgs args)
+        void OnChartTapGestureTap(object sender, EventArgs args)
         {
             //await Navigation.PushAsync(new DogProfilePage());
         }

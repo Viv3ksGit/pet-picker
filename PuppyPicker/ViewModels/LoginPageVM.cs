@@ -8,6 +8,7 @@ using Plugin.Toast;
 using System;
 using System.Threading.Tasks;
 using PuppyPicker.BaseClasses;
+using PuppyPicker.Tools;
 
 namespace PuppyPicker.ViewModels
 {
@@ -16,6 +17,7 @@ namespace PuppyPicker.ViewModels
         public string LP_Title { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+
 
         public ICommand Signin_Handle_Clicked => new Command(SignInClicked);
         public ICommand Signup_Handle_Clicked => new Command(SignUpClicked);
@@ -45,6 +47,33 @@ namespace PuppyPicker.ViewModels
 
         async public void SignInClicked()
         {
+
+            CheckData();
+        }
+
+
+        async void CheckData()
+        {
+            //Checking Email input
+            if (!StringOperations.ValidateEmailInput(Username))
+            {
+                await MyApp.MainPage.DisplayAlert("Error!", "Please enter valid email", "ok");
+                return;
+            }
+
+            //checking the password
+            var result = StringOperations.BasicValidation(Password);
+            if (result != null)
+            {
+                await MyApp.MainPage.DisplayAlert("Error!", result, "ok");
+                return;
+            }
+
+            ContinueSignIn();
+        }
+
+        async void ContinueSignIn()
+        {
             Debug.WriteLine($"check against username:{Username}, password:{Password}");
             var _user = new UserAuthInfoObject
             {
@@ -54,22 +83,30 @@ namespace PuppyPicker.ViewModels
             };
 
             IsBusy = true;
-            TestAsync();
             var result = await serviceConnect.Connect(_user);
+
             IsBusy = false;
 
-            if (result == ServerReplyStatus.Success)
+            switch (result)
             {
-                Debug.WriteLine(result);
-                MyApp.OnLogin();
-                Debug.WriteLine("Auth complete-----");
-            }
-
-            else
-            {
-                Debug.WriteLine(result);
-                Debug.WriteLine("Auth complete-----");
+                case ServerReplyStatus.Success:
+                    MyApp.OnLogin();
+                    break;
+                case ServerReplyStatus.NotConfirmed:
+                    await MyApp.MainPage.DisplayAlert("Error!", "Email not confirmed, \nPlease check your email to confirm your account", "Ok");
+                    break;
+                case ServerReplyStatus.InvalidPassword:
+                    await MyApp.MainPage.DisplayAlert("Error!", "Invalid password!", "Ok");
+                    break;
+                case ServerReplyStatus.UserNotFound:
+                    await MyApp.MainPage.DisplayAlert("Error!", "Username not found!", "Ok");
+                    break;
+                default:
+                    await MyApp.MainPage.DisplayAlert("Error!", "Something went wrong", "Ok");
+                    break;
             }
         }
+
+        
     }
 }

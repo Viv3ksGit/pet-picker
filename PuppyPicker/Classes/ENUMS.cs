@@ -5,6 +5,11 @@ namespace PuppyPicker.ENUMS {
     {
         Success,
         Fail,
+        UserNameAlreadyUsed,
+        PasswordRequirementsFailed,
+        NotConfirmed,
+        InvalidPassword,
+        UserNotFound,
         Unknown
     }
     public enum AuthType
