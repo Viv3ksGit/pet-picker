@@ -9,7 +9,7 @@
         
         <StackLayout Grid.Row="0" Margin="10, 20, 10, 10">
             <Label Text="Please enter title for the survey" x:Name="labelTitle"/> 
-            <Entry x:Name="entryTitle"/>
+            <Entry x:Name="entryTitle" Text="{Binding entryTitle, Mode=TwoWay}"/>
         </StackLayout>
        
         <ScrollView Grid.Row="1" Margin="10, 20, 10, 10">
@@ -54,7 +54,7 @@
             </StackLayout>
         </ScrollView>
         
-        <Button Grid.Row="2" Margin="10, 0, 10, 10" Text="FINISH" Clicked="Handle_Clicked" VerticalOptions="Center"/>
+        <Button Grid.Row="2" Margin="10, 0, 10, 10" Text="FINISH" Command="{Binding Finish_Handle_Clicked}" VerticalOptions="Center"/>
         
     </Grid>
 </local:BaseClasses.BasePage>

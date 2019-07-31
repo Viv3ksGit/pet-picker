@@ -4,11 +4,16 @@ using System.ComponentModel;
 using System.Windows.Input;
 using PuppyPicker.BaseClasses;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace PuppyPicker.ViewModels 
 {
     public class MatchPageVM : BaseVM
     {
+
+        public string entryTitle { get; set; }
+        string SurveyTitle;
+
         string[] Answer1 = { "a", "b", "c", "d" };
         string[] Answer2 = { "a", "b", "c", "d" };
         string[] Answer3 = { "a", "b", "c", "d" };
@@ -22,9 +27,22 @@ namespace PuppyPicker.ViewModels
 
 
 
+        public ICommand Finish_Handle_Clicked => new Command(FinishHandleClicked);
+
+
+
         public MatchPageVM()
         {
 
+        }
+
+        public void FinishHandleClicked(object obj)
+        {
+            SurveyTitle = entryTitle;
+
+            var myPage = MyApp.MainPage as MasterDetailPage;
+            //myPage.Detail = new ResultsPage();
+            myPage.Detail.Navigation.PushAsync(new ResultsPage());
         }
 
         public string Question1
