@@ -3,7 +3,7 @@
     <ContentPage.Content>
         <TableView Intent="Settings">
     <TableRoot>
-        <TableSection Title="My settings">
+        <TableSection>
             <ViewCell>
                 <StackLayout Orientation="Horizontal" Margin="15,0,15,0">
                     <Label Text="Image size"
@@ -11,19 +11,18 @@
                        HorizontalOptions="Start"
                            VerticalOptions="Center"/>
                     <Picker x:Name="imageSize"
-                            Title="Image Size"
-                            TitleColor="Red" HorizontalOptions="EndAndExpand">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Small</x:String>
-                                <x:String>Medium</x:String>
-                                <x:String>Large</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                        <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                            Title="{Binding DefaultImageSize}"
+                            TitleColor="Red" 
+                            HorizontalOptions="EndAndExpand" 
+                            ItemsSource="{Binding ImageSizeList}" 
+                            SelectedItem="{Binding SelectedImageSize}">
                     </Picker>
                 </StackLayout>
             </ViewCell>
+            
+            <!-- This doesn't do anything for now  -->
+            <SwitchCell Text="New pet notifications" On="false" />
+                    
             <ViewCell>
                 <StackLayout Orientation="Horizontal" Margin="15,0,15,0">
                     <Label Text="Font size"
@@ -31,16 +30,11 @@
                        HorizontalOptions="Start"
                            VerticalOptions="Center"/>
                     <Picker x:Name="fontSize"
-                            Title="Font Size"
-                            TitleColor="Red" HorizontalOptions="EndAndExpand">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Small</x:String>
-                                <x:String>Medium</x:String>
-                                <x:String>Large</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                        <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                            Title="{Binding DefaultFontSize}"
+                            TitleColor="Red" 
+                            HorizontalOptions="EndAndExpand" 
+                            ItemsSource="{Binding FontSizeList}" 
+                            SelectedItem="{Binding SelectedFontSize}">
                     </Picker>
                 </StackLayout>
             </ViewCell>
@@ -51,16 +45,11 @@
                        HorizontalOptions="Start"
                            VerticalOptions="Center"/>
                     <Picker x:Name="appTheme"
-                            Title="Theme"
-                            TitleColor="Red" HorizontalOptions="EndAndExpand">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Summer</x:String>
-                                <x:String>Default</x:String>
-                                <x:String>Beach</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                        <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                            Title="{Binding DefaultThemeName}"
+                            TitleColor="Red" 
+                            HorizontalOptions="EndAndExpand" 
+                            ItemsSource="{Binding ThemeNameList}" 
+                            SelectedItem="{Binding SelectedThemeName}">
                     </Picker>
                 </StackLayout>
             </ViewCell>

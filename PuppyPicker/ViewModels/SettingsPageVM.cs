@@ -15,41 +15,160 @@ namespace PuppyPicker.ViewModels
     {
         public string SP_Title { get; set; }
 
-        public ICommand Image_Size_Handle_Clicked => new Command(ImageSizeClicked);
-        public ICommand Notifications_Handle_Clicked => new Command(NotificationsClicked);
-        public ICommand Font_Size_Handle_Clicked => new Command(FontSizeClicked);
-        public ICommand Themes_Handle_Clicked => new Command(ThemesClicked);
+        //Values that will appear in the drop down menus
+        string[] ImageSize = { "Small", "Medium", "Large" };
+        string[] FontSize = { "Small", "Medium", "Large" };
+        string[] ThemeName = { "Default", "Summer", "Beach" };
+
+        public string DefaultImageSize
+        {
+            get
+            {
+                //if (settingsImageSize == "")
+                //    return("Medium");
+                //else
+                //    SelectedImageSize = settingsImageSize;
+                return settingsImageSize;
+            }
+        }
+
+        public string DefaultFontSize
+        {
+            get
+            {
+                return settingsFontSize;
+            }
+        }
+
+        public string DefaultThemeName
+        {
+            get
+            {
+                return settingsThemeName;
+            }
+
+        }
 
         public SettingsPageVM()
         {
             SP_Title = "Settings";
+
         }
 
-
-        private void ImageSizeClicked(object obj)
+        public string[] ImageSizeList
         {
-            MyApp.MainPage.DisplayAlert("", "Coming Soon ", "OK");
+            get {
+                return ImageSize; }
+            set
+            {
+                
+                if (ImageSize != value)
+                {
+                    ImageSize = value;
+                    OnPropertyChanged();
+                   
+                }
+            }
         }
 
-
-
-        private void NotificationsClicked(object obj)
+        public string[] FontSizeList
         {
-            MyApp.MainPage.DisplayAlert("", "Coming Soon ", "OK");
+            get
+            {
+                return FontSize;
+            }
+            set
+            {
+
+                if (FontSize != value)
+                {
+                    FontSize = value;
+                    OnPropertyChanged();
+
+                }
+            }
         }
 
-
-
-        private void FontSizeClicked(object obj)
+        public string[] ThemeNameList
         {
-            MyApp.MainPage.DisplayAlert("", "Coming Soon ", "OK");
+            get
+            {
+                return ThemeName;
+            }
+            set
+            {
+
+                if (ThemeName != value)
+                {
+                    ThemeName = value;
+                    OnPropertyChanged();
+
+                }
+            }
         }
 
-
-
-        private void ThemesClicked(object obj)
+        String ImageSizeChoice;
+        public string SelectedImageSize
         {
-            MyApp.MainPage.DisplayAlert("", "Coming Soon ", "OK");
+            get { return ImageSizeChoice; }
+            set
+            {
+                if (ImageSizeChoice != value)
+                {
+                    ImageSizeChoice = value;
+                    settingsImageSize = value;
+                    OnPropertyChanged();
+                }
+            }
         }
+
+        String FontSizeChoice;
+        public string SelectedFontSize
+        {
+            get { return FontSizeChoice; }
+            set
+            {
+                if (FontSizeChoice != value)
+                {
+                    FontSizeChoice = value;
+                    settingsFontSize = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        String ThemeNameChoice;
+        public string SelectedThemeName
+        {
+            get { return ThemeNameChoice; }
+            set
+            {
+                if (ThemeNameChoice != value)
+                {
+                    ThemeNameChoice = value;
+                    settingsThemeName = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        //private void NotificationsClicked(object obj)
+        //{
+        //    MyApp.MainPage.DisplayAlert("", "Coming Soon ", "OK");
+        //}
+
+
+
+        //private void FontSizeClicked(object obj)
+        //{
+        //    MyApp.MainPage.DisplayAlert("", "Coming Soon ", "OK");
+        //}
+
+
+
+        //private void ThemesClicked(object obj)
+        //{
+        //    MyApp.MainPage.DisplayAlert("", "Coming Soon ", "OK");
+        //}
     }
 }

@@ -10,8 +10,11 @@ namespace PuppyPicker.BaseClasses
 {
     public class BaseVM : INotifyPropertyChanged
     {
+        //Default values for the settings
+        protected string settingsImageSize = "Medium";
+        protected string settingsFontSize = "Medium";
+        protected string settingsThemeName = "Default";
 
-        
         private bool _IsBusy;
         public bool IsBusy
         {
