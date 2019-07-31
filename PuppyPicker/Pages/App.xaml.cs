@@ -1,4 +1,5 @@
 ﻿using System;
+using PuppyPicker.Classes;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,6 +12,10 @@ namespace PuppyPicker
         public App()
         {
             InitializeComponent();
+
+            if(Properties.ContainsKey("Username"))
+                OnLogin();
+            else
 
             MainPage = new LoginPage();
         }
@@ -35,6 +40,15 @@ namespace PuppyPicker
             MainPage = new MainPage();
 
         }
+
+        async public void OnLogout()
+        {
+            Properties.Remove("Username");
+            Properties.Remove("Password");
+            await SavePropertiesAsync();
+
+            MainPage = new NavigationPage(new LoginPage());
+        }
         public void OnSubmit()
         {
 
@@ -49,12 +63,7 @@ namespace PuppyPicker
 
         }
 
-        public void OnLogout()
-        {
-
-            MainPage = new LoginPage();
-
-        }
+     
         protected override void OnStart()
         {
             // Handle when your app starts
@@ -69,5 +78,14 @@ namespace PuppyPicker
         {
             // Handle when your app resumes
         }
+
+        public void SetSessionData(SignInContext _sessionData)
+        {
+
+            Properties["Username"] = _sessionData.UserName;
+            Properties["Password"] = _sessionData.UserPassword;
+            SavePropertiesAsync();
+        }
     }
 }
+    
