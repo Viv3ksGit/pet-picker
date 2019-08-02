@@ -14,6 +14,7 @@ namespace PuppyPicker.BaseClasses
         protected string settingsImageSize = "Medium";
         protected string settingsFontSize = "Medium";
         protected string settingsThemeName = "Default";
+        protected Boolean settingsNotifications = true;
 
         private bool _IsBusy;
         public bool IsBusy

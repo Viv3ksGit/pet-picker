@@ -49,6 +49,15 @@ namespace PuppyPicker.ViewModels
 
         }
 
+        public string DefaultNotifications
+        {
+            get
+            {
+                return settingsNotifications ? "true" : "false";
+            }
+
+        }
+
         public SettingsPageVM()
         {
             SP_Title = "Settings";
