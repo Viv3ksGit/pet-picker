@@ -1,14 +1,17 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using PuppyPicker.BaseClasses;
 using Xamarin.Forms;
+using static PuppyPicker.Tools.Helper;
 
 namespace PuppyPicker.ViewModels
 {
     public class DogProfilePageVM : INotifyPropertyChanged
     {
         public string DogPP_Title { get; set; }
+        //public string url_image { get; set; }
         private string myText;
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -33,9 +36,8 @@ namespace PuppyPicker.ViewModels
         public string ImageFile
         {
             get; set;
-            //get { return string.Format("huskeypuppy.jpg");  }
-            //set { this.ImageFile = value; }
         }
+
 
         public string MyText
         {

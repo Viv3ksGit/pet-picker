@@ -11,15 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
-    <PackageReference Include="AWSSDK.CognitoIdentityProvider" Version="3.3.102.32" />
-    <PackageReference Include="AWSSDK.Core" Version="3.3.103.11" />
-    <PackageReference Include="AWSSDK.SecurityToken" Version="3.3.101.29" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="AWSSDK.CognitoIdentityProvider" Version="3.3.102.41" />
+    <PackageReference Include="AWSSDK.Core" Version="3.3.103.20" />
+    <PackageReference Include="AWSSDK.SecurityToken" Version="3.3.102.5" />
     <PackageReference Include="AWSSDK.Extensions.CognitoAuthentication" Version="0.9.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Plugin.Toast" Version="2.1.2" />
     <PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.104.8" />
+    <PackageReference Include="FirebaseDatabase.net" Version="4.0.1" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="FirebaseStorage.net" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

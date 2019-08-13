@@ -4,6 +4,15 @@
         <ScrollView>
             <Grid x:Name="gridLayout" Margin="10,10,10,10">
             </Grid>
+
+            <!--<ListView x:Name="lstPersons">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding DogPP_Title}"></TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+            </ListView>-->
+
         <!--<Grid HorizontalOptions="Center">
                       <Grid.RowDefinitions>
                             <RowDefinition Height = "*"/>
