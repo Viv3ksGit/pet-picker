@@ -14,7 +14,6 @@ namespace PuppyPicker
         //FirebaseClient firebase = new FirebaseClient("https://puppypicker-dd153.firebaseio.com/");
         FirebaseHelper firebaseHelper = new FirebaseHelper();
 
-
         //FirebaseStorage firebaseStorage = new FirebaseStorage("puppypicker-dd153.appspot.com/");
         FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper();
 

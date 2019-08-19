@@ -1,113 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<local:BaseClasses.BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuppyPicker.MatchPage"  xmlns:local ="clr-namespace:PuppyPicker" Title = "Match">
+<local:BaseClasses.BasePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PuppyPicker.MatchPage"
+    xmlns:local ="clr-namespace:PuppyPicker"
+    Title = "Match">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "4*"/>
+            <RowDefinition Height = "0.5*"/>
+            <RowDefinition Height = "2*"/>
             <RowDefinition Height = "0.5*"/>
         </Grid.RowDefinitions>
         
-        <StackLayout Grid.Row="0" Margin="10, 20, 10, 10">
+        <StackLayout Grid.Row="0" Margin="10, 20, 10, 0">
             <Label Text="Please enter title for the survey" x:Name="labelTitle"/> 
             <Entry x:Name="entryTitle" Text="{Binding entryTitle, Mode=TwoWay}"/>
         </StackLayout>
        
-        <ScrollView Grid.Row="1" Margin="10, 20, 10, 10">
-            <StackLayout >
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                         <ColumnDefinition Width= "2*" />
-                         <ColumnDefinition Width= "*" />
-                    </Grid.ColumnDefinitions>
-                    
-                    <Label Grid.Row="0" Grid.Column="0" Margin="0, 5, 0, 5" Text="{Binding Question1}"/>
-                    <Picker Grid.Row="0" Grid.Column="1" Margin="0, 5, 0, 5" x:Name="Answer1" Title="Select an Answer" ItemsSource="{Binding Answer1List}" SelectedItem="{Binding SelectedAnswer1}"/>
-                    
-                    <Label Grid.Row="1" Grid.Column="0" Margin="0, 5, 0, 5" Text="{Binding Question2}"/>
-                    <Picker Grid.Row="1" Grid.Column="1" Margin="0, 5, 0, 5" x:Name="Answer2" Title="Select an Answer" ItemsSource="{Binding Answer2List}" SelectedItem="{Binding SelectedAnswer2}"/>
-                    
-                    <Label Grid.Row="2" Grid.Column="0" Margin="0, 5, 0, 5" Text="{Binding Question3}"/>
-                    <Picker Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 5" x:Name="Answer3" Title="Select an Answer" ItemsSource="{Binding Answer3List}" SelectedItem="{Binding SelectedAnswer3}"/>
-                    
-                    <Label Grid.Row="3" Grid.Column="0" Margin="0, 5, 0, 5" Text="{Binding Question4}"/>
-                    <Picker Grid.Row="3" Grid.Column="1" Margin="0, 5, 0, 5" x:Name="Answer4" Title="Select an Answer" ItemsSource="{Binding Answer4List}" SelectedItem="{Binding SelectedAnswer4}"/>
-                    
-                    <Label Grid.Row="4" Grid.Column="0" Margin="0, 5, 0, 5" Text="{Binding Question5}"/>
-                    <Picker Grid.Row="4" Grid.Column="1" Margin="0, 5, 0, 5" x:Name="Answer5" Title="Select an Answer" ItemsSource="{Binding Answer5List}" SelectedItem="{Binding SelectedAnswer5}"/>
-                    
-                    <Label Grid.Row="5" Grid.Column="0" Margin="0, 5, 0, 5" Text="{Binding Question6}"/>
-                    <Picker Grid.Row="5" Grid.Column="1" Margin="0, 5, 0, 5" x:Name="Answer6" Title="Select an Answer" ItemsSource="{Binding Answer6List}" SelectedItem="{Binding SelectedAnswer6}"/>
-                    
-                    <Label Grid.Row="6" Grid.Column="0" Margin="0, 5, 0, 5" Text="{Binding Question7}"/>
-                    <Picker Grid.Row="6" Grid.Column="1" Margin="0, 5, 0, 5" x:Name="Answer7" Title="Select an Answer" ItemsSource="{Binding Answer7List}" SelectedItem="{Binding SelectedAnswer7}"/>
-                    
-                    <Label Grid.Row="7" Grid.Column="0" Margin="0, 5, 0, 5" Text="{Binding Question8}"/>
-                    <Picker Grid.Row="7" Grid.Column="1" Margin="0, 5, 0, 5" x:Name="Answer8" Title="Select an Answer" ItemsSource="{Binding Answer8List}" SelectedItem="{Binding SelectedAnswer8}"/>
-                    
-                    <Label Grid.Row="8" Grid.Column="0" Margin="0, 5, 0, 5" Text="{Binding Question9}"/>
-                    <Picker Grid.Row="8" Grid.Column="1" Margin="0, 5, 0, 5" x:Name="Answer9" Title="Select an Answer" ItemsSource="{Binding Answer9List}" SelectedItem="{Binding SelectedAnswer9}"/>
-                    
-                    <Label Grid.Row="9" Grid.Column="0" Margin="0, 5, 0, 5" Text="{Binding Question10}"/>
-                    <Picker Grid.Row="9" Grid.Column="1" Margin="0, 5, 0, 5" x:Name="Answer10" Title="Select an Answer" ItemsSource="{Binding Answer10List}" SelectedItem="{Binding SelectedAnswer10}"/>
-                    
-                </Grid>
-            </StackLayout>
+        <ScrollView Grid.Row="1" Margin="10, 0, 10, 10">
+            <Grid x:Name="gridLayoutQuiz" />
         </ScrollView>
         
         <Button Grid.Row="2" Margin="10, 0, 10, 10" Text="FINISH" Command="{Binding Finish_Handle_Clicked}" VerticalOptions="Center"/>
         
     </Grid>
 </local:BaseClasses.BasePage>
-<!--
-    <StackLayout Padding="10" >
-       <Label Text="Please enter title for the survey" x:Name="labelTitle"/> 
-       <Entry x:Name="entryTitle"/>
-       
-       <ListView Margin="0,20,0,0" VerticalOptions="StartAndExpand" HeightRequest="800">
-            <ListView.ItemsSource>
-                <x:Array Type="{x:Type local:SurveyQuestion}">
-                    <local:SurveyQuestion question="question1" answer="answer1"/>
-                    <local:SurveyQuestion question="question2" answer="answer2"/>       
-                    <local:SurveyQuestion question="question3" answer="answer3"/>       
-                    <local:SurveyQuestion question="question4" answer="answer4"/>       
-                    <local:SurveyQuestion question="question5" answer="answer5"/>       
-                    <local:SurveyQuestion question="question6" answer="answer6"/>       
-                    <local:SurveyQuestion question="question7" answer="answer7"/>       
-                    <local:SurveyQuestion question="question8" answer="answer8"/>
-                    <local:SurveyQuestion question="question9" answer="answer9"/>
-                    <local:SurveyQuestion question="question10" answer="answer10"/>
-                </x:Array>
-            </ListView.ItemsSource>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                            <Label Text="{Binding question}" FontAttributes="Bold" />
-                            <Label Grid.Column="1" Text="{Binding answer}" />
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button Text="FINISH" Clicked="Handle_Clicked"/>
-    </StackLayout>
-    -->
-<!--<Picker x:Name="picker"
-        Title="Select a monkey"
-        TitleColor="Red">
-              <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                  <x:String>Baboon</x:String>
-                  <x:String>Capuchin Monkey</x:String>
-                  <x:String>Blue Monkey</x:String>
-                  <x:String>Squirrel Monkey</x:String>
-                  <x:String>Golden Lion Tamarin</x:String>
-                  <x:String>Howler Monkey</x:String>
-                  <x:String>Japanese Macaque</x:String>
-                </x:Array>
-              </Picker.ItemsSource>
-            </Picker>
-        -->
