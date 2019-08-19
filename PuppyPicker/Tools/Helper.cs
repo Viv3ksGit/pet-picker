@@ -63,6 +63,27 @@ namespace PuppyPicker.Tools
                         };
                     }).ToList();
             }
+
+            public async Task<List<MatchPageVM>> GetQuizQuestions()
+            {
+                return (await firebase
+                  .Child("Quiz")
+                  .OnceAsync<MatchPageVM>()
+                  )
+                  .Select(
+                     item =>
+                     {
+                         return new MatchPageVM
+                         {
+                             question = item.Object.question,
+                             answer1 = item.Object.answer1,
+                             answer2 = item.Object.answer2,
+                             answer3 = item.Object.answer3,
+                             answer4 = item.Object.answer4,
+                             answer5 = item.Object.answer5
+                         };
+                     }).ToList();
+            }
         }
     }
 }
