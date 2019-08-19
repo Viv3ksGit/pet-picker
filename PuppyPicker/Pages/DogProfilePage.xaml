@@ -9,18 +9,18 @@
             
             
             <StackLayout Grid.Row="0">
-                <Image Source="siberianhusky.jpg"/>
+                <Image Source="bernese.jpg"/>
             
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Dog Name"  TextColor="Black" Margin="30,10" HorizontalOptions="StartAndExpand" FontSize= "30" />
+                    <Label Text="Bernese Mountain Dog"  TextColor="Black" FontAttributes="Bold" Margin="30,10" HorizontalOptions="StartAndExpand" FontSize= "20" />
                     
-                    <Button Text="{Binding MyText}" Margin="30,10,30,20" BackgroundColor="Blue" TextColor="White" Padding="10" HorizontalOptions="End" Command="{Binding Favorite_Handle_Clicked}"/>
+                    <Button Text="{Binding MyText}" Margin="30,10,30,20" BackgroundColor="#FE5725" TextColor="White" Padding="10" HorizontalOptions="End" Command="{Binding Favorite_Handle_Clicked}"/>
                 </StackLayout>
             
         
                 <Label Text="{Binding About}" Margin="30,10" FontSize= "14" />
                 
-                <Label Text="Charateristics" Margin="30,2,0,0" FontSize= "20" TextColor="Black" />
+                <Label Text="Charateristics" Margin="30,2,0,0" FontAttributes="Bold" FontSize= "20" TextColor="Black" />
                 
                 <StackLayout Orientation="Horizontal" Margin = "30,10,10,10" >
                     <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9"  />
