@@ -32,6 +32,26 @@ namespace PuppyPicker.ViewModels
         {
             get { return string.Format("Weight"); }
         }
+        public string Charateristics1
+        {
+            get { return string.Format("Height"); }
+        }
+        public string Charateristics2
+        {
+            get { return string.Format("Engery Level"); }
+        }
+        public string Charateristics3
+        {
+            get { return string.Format("Colors"); }
+        }
+        public string Charateristics4
+        {
+            get { return string.Format("Coat Length"); }
+        }
+        public string Charateristics5
+        {
+            get { return string.Format("Tendency to Bark"); }
+        }
 
         public string ImageFile
         {

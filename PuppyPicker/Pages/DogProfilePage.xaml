@@ -24,9 +24,13 @@
                 
                 <StackLayout Orientation="Horizontal" Margin = "30,10,10,10" >
                     <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9"  />
-                    <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
-                    <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
-                    <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" /> 
+                    <Label Text="{Binding Charateristics1}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
+                    <Label Text="{Binding Charateristics2}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
+                    <Label Text="{Binding Charateristics3}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
+                    <Label Text="{Binding Charateristics4}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
+                    <Label Text="{Binding Charateristics5}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" /> 
+
+
                 </StackLayout>
                    
                     <Grid Padding="5,5,5,0">
