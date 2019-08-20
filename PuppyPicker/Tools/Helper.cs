@@ -60,6 +60,7 @@ namespace PuppyPicker.Tools
                         return new DogProfilePageVM
                         {
                             DogPP_Title = item.Object.DogPP_Title,
+                            Description = item.Object.Description,
                             ImageFile = item.Object.ImageFile
                         };
                     }).ToList();
@@ -68,8 +69,8 @@ namespace PuppyPicker.Tools
             public async Task<List<DogProfilePageVM>> GetFavouritesDogs()
             {
                 return (await firebase
-                  .Child("Dogs").OrderBy("DogPP_Title")
-                  //.OrderByKey()
+                  .Child("Dogs")
+                  .OrderBy("DogPP_Title")
                   .LimitToFirst(5)
                   .OnceAsync<DogProfilePageVM>()
                   )
@@ -82,6 +83,15 @@ namespace PuppyPicker.Tools
                              ImageFile = item.Object.ImageFile
                          };
                      }).ToList();
+            }
+
+            public async Task<DogProfilePageVM> GetDog(string DogPP_Title)
+            {
+                var allDogs = await GetAllDogs();
+                await firebase
+                  .Child("Dogs")
+                  .OnceAsync<DogProfilePageVM>();
+                return allDogs.Where(a => a.DogPP_Title == DogPP_Title).FirstOrDefault();
             }
 
             public async Task<List<MatchPageVM>> GetQuizQuestions()

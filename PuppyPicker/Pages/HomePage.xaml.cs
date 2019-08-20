@@ -10,11 +10,7 @@ namespace PuppyPicker
     {
 
         private List<DogProfilePageVM> dogs;
-        //connecting to Google Firebase Realtime DB
-        //FirebaseClient firebase = new FirebaseClient("https://puppypicker-dd153.firebaseio.com/");
         FirebaseHelper firebaseHelper = new FirebaseHelper();
-
-        //FirebaseStorage firebaseStorage = new FirebaseStorage("puppypicker-dd153.appspot.com/");
         FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper();
 
         protected async override void OnAppearing()
@@ -44,11 +40,21 @@ namespace PuppyPicker
                     var image = new Image
                     {
                         Source = await firebaseStorageHelper.GetFile(dog.ImageFile),
+                        StyleId = dog.DogPP_Title,
                         Aspect = Aspect.AspectFit,
                         VerticalOptions = LayoutOptions.FillAndExpand,
                         HorizontalOptions = LayoutOptions.FillAndExpand
                     };
-                    image.GestureRecognizers.Add((new TapGestureRecognizer((view) => OnChartTapGestureTap())));
+                    
+                    var tapGestureRecognizer = new TapGestureRecognizer();
+
+                    tapGestureRecognizer.Tapped += async (s, e) => {
+                        Image input = (Image)s;
+                        string selected = input.StyleId.ToString();
+                        await Navigation.PushAsync(new DogProfilePage(selected));
+                    };
+                    image.GestureRecognizers.Add(tapGestureRecognizer);
+
                     var label = new Label
                     {
                         Text = dog.DogPP_Title,
@@ -65,11 +71,6 @@ namespace PuppyPicker
         public HomePage()
         {
             InitializeComponent();
-        }
-
-        private async void OnChartTapGestureTap()
-        {
-            await Navigation.PushAsync(new DogProfilePage());
         }
     }
 }

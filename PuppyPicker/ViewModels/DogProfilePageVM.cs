@@ -13,6 +13,9 @@ namespace PuppyPicker.ViewModels
         public string DogPP_Title { get; set; }
         //public string url_image { get; set; }
         private string myText;
+        public string Description { get; set; }
+        private Task<DogProfilePageVM> task;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         //public ICommand Favorite_Handle_Clicked => new Command(FavoriteClicked);
@@ -21,11 +24,6 @@ namespace PuppyPicker.ViewModels
         {
             DogPP_Title = "Profile";
             myText = "Favorite";
-        }
-
-        public string About
-        {
-            get { return string.Format("Enter the description here, basic details about the dog"); }
         }
 
         public string Charateristics
