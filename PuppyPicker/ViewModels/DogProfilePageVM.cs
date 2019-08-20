@@ -13,6 +13,9 @@ namespace PuppyPicker.ViewModels
         public string DogPP_Title { get; set; }
         //public string url_image { get; set; }
         private string myText;
+        public string Description { get; set; }
+        private Task<DogProfilePageVM> task;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         //public ICommand Favorite_Handle_Clicked => new Command(FavoriteClicked);
@@ -21,11 +24,6 @@ namespace PuppyPicker.ViewModels
         {
             DogPP_Title = "Profile";
             myText = "Favorite";
-        }
-
-        public string About
-        {
-            get { return string.Format("The Bernese mountain dog is a large dog with a beautiful tri-colored coat.The background color is black, and the markings are red or rust and white. The coat is thick and fairly long, requiring frequent brushing to keep it healthy and free of mats."); }
         }
 
         public string Charateristics
