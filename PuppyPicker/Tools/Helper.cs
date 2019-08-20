@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Firebase.Database;
+using Firebase.Database.Query;
 using Firebase.Storage;
 using PuppyPicker.ViewModels;
 
@@ -62,6 +63,25 @@ namespace PuppyPicker.Tools
                             ImageFile = item.Object.ImageFile
                         };
                     }).ToList();
+            }
+
+            public async Task<List<DogProfilePageVM>> GetFavouritesDogs()
+            {
+                return (await firebase
+                  .Child("Dogs").OrderBy("DogPP_Title")
+                  //.OrderByKey()
+                  .LimitToFirst(5)
+                  .OnceAsync<DogProfilePageVM>()
+                  )
+                  .Select(
+                     item =>
+                     {
+                         return new DogProfilePageVM
+                         {
+                             DogPP_Title = item.Object.DogPP_Title,
+                             ImageFile = item.Object.ImageFile
+                         };
+                     }).ToList();
             }
 
             public async Task<List<MatchPageVM>> GetQuizQuestions()
