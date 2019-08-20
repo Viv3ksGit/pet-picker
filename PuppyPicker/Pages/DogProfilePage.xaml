@@ -19,19 +19,23 @@
                 <StackLayout Orientation="Horizontal">
                     <Label x:Name="dogTitle"  TextColor="Black" Margin="30,10" HorizontalOptions="StartAndExpand" FontSize= "30" />
                     
-                    <Button Text="{Binding MyText}" Margin="30,10,30,20" BackgroundColor="Blue" TextColor="White" Padding="10" HorizontalOptions="End" Command="{Binding Favorite_Handle_Clicked}"/>
+                    <Button Text="{Binding MyText}" Margin="30,10,30,20" BackgroundColor="#FE5725" TextColor="White" Padding="10" HorizontalOptions="End" Command="{Binding Favorite_Handle_Clicked}"/>
                 </StackLayout>
             
         
                 <Label x:Name="dogDescription" Margin="30,10" FontSize= "14" />
                 
-                <Label Text="Charateristics" Margin="30,2,0,0" FontSize= "20" TextColor="Black" />
+                <Label Text="Charateristics" Margin="30,2,0,0" FontAttributes="Bold" FontSize= "20" TextColor="Black" />
                 
                 <StackLayout Orientation="Horizontal" Margin = "30,10,10,10" >
                     <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9"  />
-                    <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
-                    <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
-                    <Label Text="{Binding Charateristics}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" /> 
+                    <Label Text="{Binding Charateristics1}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
+                    <Label Text="{Binding Charateristics2}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
+                    <Label Text="{Binding Charateristics3}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
+                    <Label Text="{Binding Charateristics4}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" />
+                    <Label Text="{Binding Charateristics5}"  TextColor="Blue"  HorizontalOptions="StartAndExpand" FontSize= "9" /> 
+
+
                 </StackLayout>
                    
                     <Grid Padding="5,5,5,0">

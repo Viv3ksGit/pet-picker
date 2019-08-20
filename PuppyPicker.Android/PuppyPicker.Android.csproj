@@ -126,6 +126,10 @@
     <AndroidResource Include="Resources\drawable\iconreminder.png" />
     <AndroidResource Include="Resources\drawable\pug.jpeg" />
     <AndroidResource Include="Resources\drawable\Splash.xml" />
+    <AndroidResource Include="Resources\drawable\bernese.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

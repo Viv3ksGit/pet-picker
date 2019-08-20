@@ -47,7 +47,7 @@
                             Title="{Binding DefaultThemeName}"
                             TitleColor="Red" 
                             HorizontalOptions="EndAndExpand" 
-                            ItemsSource="{Binding ThemeNameList}" 
+                            ItemsSource="{Binding ThemeNameList}"
                             SelectedItem="{Binding SelectedThemeName}">
                     </Picker>
                 </StackLayout>
